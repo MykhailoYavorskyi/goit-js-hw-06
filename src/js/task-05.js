@@ -6,5 +6,5 @@ const refs = {
 refs.input.addEventListener('input', typeName);
 
 function typeName(e) {
-  refs.name.textContent = e.currentTarget.value;
+  refs.name.textContent = e.currentTarget.value || 'Anonymous';
 }
