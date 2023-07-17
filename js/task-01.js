@@ -1,9 +1,8 @@
-const refs = {
-  categories: document.getElementById('categories'),
-  items: document.getElementsByClassName('item'),
-};
-console.log(`Number of categories: ${refs.items.length}`);
-console.log(refs.items);
+const itemRef = document.getElementsByClassName("item");
 
-const titles = document.querySelector('h2');
-console.log(titles);
+const arr = [...itemRef];
+console.log(`Number of categories: ${itemRef.length}`);
+arr.forEach((value) => {
+  console.log(`Category ${value.firstElementChild.textContent}
+  Elements ${value.lastElementChild.children.length}`);
+});
