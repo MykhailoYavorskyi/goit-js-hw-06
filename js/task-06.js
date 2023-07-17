@@ -1,9 +1,12 @@
-const inputRef = document.getElementById('validation-input');
+const inputRef = document.getElementById("validation-input");
 
-inputRef.addEventListener('blur', checkInputLength);
+inputRef.addEventListener("blur", checkInputLength);
 
 function checkInputLength() {
-  return inputRef.value.length === Number(inputRef.dataset.length)
-    ? inputRef.classList.add('valid')
-    : inputRef.classList.add('invalid');
+  if (inputRef.value.length !== Number(inputRef.dataset.length)) {
+    return inputRef.classList.add("invalid");
+  }
+  inputRef.classList.add("valid");
+  inputRef.classList.remove("invalid");
+  return;
 }
